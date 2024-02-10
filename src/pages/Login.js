@@ -23,10 +23,11 @@ const Login = () => {
   };
 
   //form handle
+  const API_URL="https://blogapp-backend-l2xj.onrender.com";
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await axios.post("/api/v1/user/login", {
+      const { data } = await axios.post(`${API_URL}/api/v1/user/login`, {
         email: inputs.email,
         password: inputs.password,
       });

@@ -9,9 +9,10 @@ const BlogDetails = () => {
   const navigate = useNavigate();
   const [inputs, setInputs] = useState({});
   // get blog details
+  const API_URL="https://blogapp-backend-l2xj.onrender.com";
   const getBlogDetail = async () => {
     try {
-      const { data } = await axios.get(`/api/v1/blog/get-blog/${id}`);
+      const { data } = await axios.get(`${API_URL}/api/v1/blog/get-blog/${id}`);
       if (data?.success) {
         setBlog(data?.blog);
         setInputs({

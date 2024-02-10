@@ -5,10 +5,11 @@ const UserBlogs = () => {
   const [blogs, setBlogs] = useState([]);
 
   //get user blogs
+  const API_URL="https://blogapp-backend-l2xj.onrender.com";
   const getUserBlogs = async () => {
     try {
       const id = localStorage.getItem("userId");
-      const { data } = await axios.get(`/api/v1/blog/user-blog/${id}`);
+      const { data } = await axios.get(`${API_URL}/api/v1/blog/user-blog/${id}`);
       if (data?.success) {
         setBlogs(data?.userBlog.blogs);
       }

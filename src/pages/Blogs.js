@@ -4,9 +4,11 @@ import BlogCard from "../components/BlogCard";
 const Blogs = () => {
   const [blogs, setBlogs] = useState([]);
   //get blogs
+
+  const API_URL="https://blogapp-backend-l2xj.onrender.com";
   const getAllBlogs = async () => {
     try {
-      const { data } = await axios.get("/api/v1/blog/all-blog");
+      const { data } = await axios.get(`${API_URL}/api/v1/blog/all-blog`);
       if (data?.success) {
         setBlogs(data?.blogs);
       }
